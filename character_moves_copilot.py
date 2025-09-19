@@ -51,6 +51,36 @@ def move_circle():
 
     pass
 
+def move_triangle():
+    # 삼각형의 시작점과 끝점이 (400, 50) (사각형, 원과 동일)
+    # 꼭짓점: 오른쪽 아래(700, 50), 위(400, 550), 왼쪽 아래(100, 50)
+    start = (400, 50)
+    right = (780, 50)
+    top = (400, 550)
+    left = (20, 50)
+    # 시작점에서 오른쪽 아래로 이동
+    steps = 200
+    for t in range(steps + 1):
+        x = start[0] + (right[0] - start[0]) * t / steps
+        y = start[1] + (right[1] - start[1]) * t / steps
+        draw_boy(x, y)
+    # 오른쪽 아래 -> 위
+    for t in range(steps + 1):
+        x = right[0] + (top[0] - right[0]) * t / steps
+        y = right[1] + (top[1] - right[1]) * t / steps
+        draw_boy(x, y)
+    # 위 -> 왼쪽 아래
+    for t in range(steps + 1):
+        x = top[0] + (left[0] - top[0]) * t / steps
+        y = top[1] + (left[1] - top[1]) * t / steps
+        draw_boy(x, y)
+    # 왼쪽 아래 -> 시작점(400, 50)
+    for t in range(steps + 1):
+        x = left[0] + (start[0] - left[0]) * t / steps
+        y = left[1] + (start[1] - left[1]) * t / steps
+        draw_boy(x, y)
+    pass
+
 
 def draw_boy(x: float, y: float):
     clear_canvas_now()
@@ -60,7 +90,9 @@ def draw_boy(x: float, y: float):
 
 while True:
     move_rectangle()
+    move_triangle()
     move_circle()
+
     pass
 
 
