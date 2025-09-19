@@ -3,7 +3,8 @@ import math
 open_canvas()
 grass = load_image('grass.png')
 boy = load_image('character.png')
-
+x =400
+y =50
 def move_top():
     for x in range(780,20,-5):
         draw_boy(x,550)
@@ -52,8 +53,20 @@ def move_circle():
     pass
 
 def move_right_tri():
+    x = 780
+    y = 50
+    while x > 400:
+        x-=38/25
+        y+=2
+        draw_boy(x,y)
     pass
 def move_left_tri():
+    x = 400
+    y = 550
+    while x > 20:
+        x-=38/25
+        y-=2
+        draw_boy(x,y)
     pass
 def move_triangle():
     move_bottom1()
@@ -61,7 +74,7 @@ def move_triangle():
     move_left_tri()
     move_bottom2()
 
-def draw_boy(x: float, y: float):
+def draw_boy(x, y):
     clear_canvas_now()
     boy.draw_now(x, y)
     delay(0.01)
