@@ -13,7 +13,6 @@ def move_top():
 def move_right():
     for y in range(50,550,5):
         draw_boy(780,y)
-
     pass
 
 def move_left():
@@ -37,19 +36,15 @@ def move_rectangle():
     move_top()
     move_left()
     move_bottom2()
-
     clear_canvas_now()
-
     pass
 
 def move_circle():
-
     r =250
     for deg in range(-90,-450,-1):
         x = r*math.cos(math.radians(deg)) + 400
         y = r*math.sin(math.radians(deg)) + 300
         draw_boy(x, y)
-
     pass
 
 def move_right_tri():
@@ -78,17 +73,10 @@ def draw_boy(x, y):
     clear_canvas_now()
     boy.draw_now(x, y)
     delay(0.01)
-
-
 while True:
     move_rectangle()
     move_triangle()
     move_circle()
     pass
-
-
-
-
-
 
 close_canvas()
