@@ -42,7 +42,7 @@ def move_rectangle():
     pass
 
 def move_circle():
-    print("move circle")
+
     r =250
     for deg in range(-90,-450,-1):
         x = r*math.cos(math.radians(deg)) + 400
@@ -51,6 +51,15 @@ def move_circle():
 
     pass
 
+def move_right_tri():
+    pass
+def move_left_tri():
+    pass
+def move_triangle():
+    move_bottom1()
+    move_right_tri()
+    move_left_tri()
+    move_bottom2()
 
 def draw_boy(x: float, y: float):
     clear_canvas_now()
@@ -60,6 +69,7 @@ def draw_boy(x: float, y: float):
 
 while True:
     move_rectangle()
+    move_triangle()
     move_circle()
     pass
 
